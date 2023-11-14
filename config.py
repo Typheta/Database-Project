@@ -103,6 +103,21 @@ def highest_gpa():
     finally:
         mycursor.close()
 
+# Function to find all courses taught by a particular professor
+def courses_taught_by_professor(professor_id):
+    try:
+        mycursor.execute("SELECT * FROM Course JOIN Professor ON Course.Professor WHERE Professor.ProfessorID = %s; , (professor_id,))
+
+        mydb.commit()
+        return "Courses found!"
+    except  mysql.connector.Error as err:
+        print(f"Error: {err}")
+        return "Error finding courses."
+    finally:
+        mycursor.close()
+
+        
+
         
 
 
