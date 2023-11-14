@@ -327,11 +327,6 @@ def delete_enrollment_route():
         return "Invalid request method"
     
 
-    
-        
-        
-    
-
 @app.route('/search', methods=['POST'])
 def search():
     # Retrieve the student_id from the form
