@@ -92,11 +92,16 @@ def returnByStudentID(StudentID):
     return result
 
 # Function to find students with the highest GPA
-def highest_gpa():
+def highest_gpa(StudentID):
     try:
-        mycursor.execute("SELECT * FROM Grades WHERE StudentID = %s;")
+        mycursor.execute("SELECT MAX (FROM Grades WHERE StudentID = %s;"), StudentID))
+        result = cursor.fetchone()
 
-         return "Highest GPA found successfully!"
+        result:
+            print(f"Highest GPA for Student ID {student_id}: {result[0]}")
+            return result[0]
+
+         return result[0]
     except mysql.connector.Error as err:
         print(f"Error: {err}")
         return "Error finding GPA."
