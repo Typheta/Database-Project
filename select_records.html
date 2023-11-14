@@ -8,7 +8,61 @@
 </head>
 <body>
     <h1>Select Records</h1>
-    <!-- Your content for selecting records goes here -->
+    
+    <a href="/" style="text-decoration: none;"><button type="button">Return to Home</button></a>
+
+    <br>
+    
+    <!-- Form for searching students -->
+    <form action="/search_students" method="post">
+        <h2>Search for Student</h2>
+        <label for="student_id">Student ID:</label>
+        <input type="text" id="student_id" name="student_id" required><br>
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Form for searching professors -->
+    <form action="/search_professors" method="post">
+        <h2>Search for Professor</h2>
+        <label for="professor_id">Professor ID:</label>
+        <input type="text" id="professor_id" name="professor_id" required><br>
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Form for searching classrooms -->
+    <form action="/search_classrooms" method="post">
+        <h2>Search for Classroom</h2>
+        <label for="classroom_id">Classroom ID:</label>
+        <input type="text" id="classroom_id" name="classroom_id" required><br>
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Form for searching courses -->
+    <form action="/search_courses" method="post">
+        <h2>Search for Course</h2>
+        <label for="course_id">Course ID:</label>
+        <input type="text" id="course_id" name="course_id" required><br>
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Form for searching grades -->
+    <form action="/search_grades" method="post">
+        <h2>Search for Grade</h2>
+        <label for="grade_id">Grade ID:</label>
+        <input type="text" id="grade_id" name="grade_id" required><br>
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Form for searching enrollments -->
+    <form action="/search_enrollments" method="post">
+        <h2>Search for Enrollment</h2>
+        <label for="enrollment_id">Enrollment ID:</label>
+        <input type="text" id="enrollment_id" name="enrollment_id" required><br>
+        <button type="submit">Search</button>
+    </form>
+
+    <br>
+
     <a href="/" style="text-decoration: none;"><button type="button">Return to Home</button></a>
 </body>
 </html>
