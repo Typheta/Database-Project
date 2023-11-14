@@ -126,6 +126,119 @@ def insert_enrollment_route():
             return f"{result}<br><a href='/'>Back to Home</a>"
     else:
         return "Invalid request method"
+        
+@app.route('/update_student_route', methods=['POST'])
+def update_student_route():
+    if request.method == 'POST':
+    student_id = request.form['student_id']
+    first_name = request.form['first_name']
+    last_name = request.form['last.name']
+    dob = request.form['dob']
+    email = request.form['email']
+    major = request.form['major']
+
+result = update_student(student_id, first_name, last_name, dob, email, major)
+
+if "successfully" in result.lower():
+            return f"{result}<br><a href='/'>Return to Home</a>"
+        else:
+            return f"{result}<br><a href='/'>Back to Home</a>"
+    else:
+        return "Invalid request method"
+
+
+@app.route('/update_professor_route', methods=['POST'])
+def update_professor_route():
+    if request.method == 'POST':
+        professor_id = request.form['student_id']
+        first_name = request.form['first_name']
+        last_name = request.form['last_name']
+        dob = request.form['dob']
+        email = request.form['email']
+        department = request.form['department']
+
+result = update_professor(professor_id, first_name, last_name, dob, email, department)
+
+if "successfully" in result.lower():
+            return f"{result}<br><a href='/'>Return to Home</a>"
+        else:
+            return f"{result}<br><a href='/'>Back to Home</a>"
+    else:
+        return "Invalid request method"
+
+def update_classroom_route():
+    if request.method == 'POST':
+        classroom_id = request.form['classroom_id']
+        building = request.form['building']
+        room_number = request.form['room_number']
+        capacity = request.form['capacity']
+
+result = update_classroom(classroom_id, building, room_number, capacity)
+
+if "successfully" in result.lower():
+            return f"{result}<br><a href='/'>Return to Home</a>"
+        else:
+            return f"{result}<br><a href='/'>Back to Home</a>"
+    else:
+        return "Invalid request method"
+
+def update_course_route():
+    if request.method == 'POST'
+        course_id = request.form['course_id']
+        course_name = request.form['course_name']
+        classroom_id = request.form['classroom_id']
+        course_year = request.form['course_year']
+        course_description = request.form['course_description']
+        professor_id = request.form['professor_id']
+
+result = update_course(course_id, course_name, classroom_id, course_year, course_description, professor_id)
+        
+        if "successfully" in result.lower():
+            return f"{result}<br><a href='/'>Return to Home</a>"
+        else:
+            return f"{result}<br><a href='/'>Back to Home</a>"
+    else:
+        return "Invalid request method"
+
+def update_grade_route():
+    if request.method == 'POST'
+        grade_id = request.form['grade_id']
+        student_id = request.form['student_id']
+        course_id = request.form['course_id']
+        semester = request.form['semester']
+        letter_grade = request.form['letter_grade']
+        numeric_grade = request.form['numeric_grade']
+
+        result = update_grade(grade_id, student_id, course_id, semester, letter_grade, numeric_grade)
+        
+        if "successfully" in result.lower():
+            return f"{result}<br><a href='/'>Return to Home</a>"
+        else:
+            return f"{result}<br><a href='/'>Back to Home</a>"
+    else:
+        return "Invalid request method"
+
+def update_enrollment_route():
+    if request.method == 'POST':
+        enrollment_id = request.form['enrollment_id']
+        student_id = request.form['student_id']
+        course_id = request.form['course_id']
+        enrollment_date = request.form['enrollment_date']
+
+        result = update_enrollment(enrollment_id, student_id, course_id, enrollment_date)
+       
+        if "successfully" in result.lower():
+            return f"{result}<br><a href='/'>Return to Home</a>"
+        else:
+            return f"{result}<br><a href='/'>Back to Home</a>"
+    else:
+        return "Invalid request method"
+    
+
+    
+        
+        
+    
 
 @app.route('/search', methods=['POST'])
 def search():
