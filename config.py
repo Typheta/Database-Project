@@ -120,15 +120,6 @@ def courses_taught_by_professor(professor_id):
         mycursor.close()
 
 def delete_student(student_id):
-    """
-    Deletes a student record from the database.
-
-    Args:
-    - student_id (int): ID of the student to be deleted.
-
-    Returns:
-    - str: A message indicating the success or failure of the operation.
-    """
     try:
         cursor = mydb.cursor()
         cursor.execute("DELETE FROM Student WHERE StudentID = %s", (student_id,))
