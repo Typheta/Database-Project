@@ -165,7 +165,7 @@ if "successfully" in result.lower():
             return f"{result}<br><a href='/'>Back to Home</a>"
     else:
         return "Invalid request method"
-
+@app.route('/update_classroom_route', methods=['POST'])
 def update_classroom_route():
     if request.method == 'POST':
         classroom_id = request.form['classroom_id']
@@ -181,7 +181,7 @@ if "successfully" in result.lower():
             return f"{result}<br><a href='/'>Back to Home</a>"
     else:
         return "Invalid request method"
-
+@app.route('/update_course_route', methods=['POST'])
 def update_course_route():
     if request.method == 'POST'
         course_id = request.form['course_id']
@@ -199,7 +199,8 @@ result = update_course(course_id, course_name, classroom_id, course_year, course
             return f"{result}<br><a href='/'>Back to Home</a>"
     else:
         return "Invalid request method"
-
+        
+@app.route('/update_grade_route', methods=['POST'])
 def update_grade_route():
     if request.method == 'POST'
         grade_id = request.form['grade_id']
@@ -217,7 +218,8 @@ def update_grade_route():
             return f"{result}<br><a href='/'>Back to Home</a>"
     else:
         return "Invalid request method"
-
+        
+@app.route('/update_enrollment_route', methods=['POST'])
 def update_enrollment_route():
     if request.method == 'POST':
         enrollment_id = request.form['enrollment_id']
@@ -227,6 +229,96 @@ def update_enrollment_route():
 
         result = update_enrollment(enrollment_id, student_id, course_id, enrollment_date)
        
+        if "successfully" in result.lower():
+            return f"{result}<br><a href='/'>Return to Home</a>"
+        else:
+            return f"{result}<br><a href='/'>Back to Home</a>"
+    else:
+        return "Invalid request method"
+
+@app.route('/delete_student', methods=['POST'])
+def delete_student_route():
+    if request.method == 'POST':
+        student_id = request.form['student_id']
+        
+        result = delete_student(student_id)
+        
+        # Check if the deletion was successful
+        if "successfully" in result.lower():
+            return f"{result}<br><a href='/'>Return to Home</a>"
+        else:
+            return f"{result}<br><a href='/'>Back to Home</a>"
+    else:
+        return "Invalid request method"
+
+@app.route('/delete_professor', methods=['POST'])
+def delete_professor_route():
+    if request.method == 'POST':
+        professor_id = request.form['professor_id']
+        
+        result = delete_professor(professor_id)
+        
+        # Check if the deletion was successful
+        if "successfully" in result.lower():
+            return f"{result}<br><a href='/'>Return to Home</a>"
+        else:
+            return f"{result}<br><a href='/'>Back to Home</a>"
+    else:
+        return "Invalid request method"
+
+@app.route('/delete_classroom', methods=['POST'])
+def delete_classroom_route():
+    if request.method == 'POST':
+        classroom_id = request.form['classroom_id']
+        
+        result = delete_classroom(classroom_id)
+        
+        # Check if the deletion was successful
+        if "successfully" in result.lower():
+            return f"{result}<br><a href='/'>Return to Home</a>"
+        else:
+            return f"{result}<br><a href='/'>Back to Home</a>"
+    else:
+        return "Invalid request method"
+
+@app.route('/delete_course', methods=['POST'])
+def delete_course_route():
+    if request.method == 'POST':
+        course_id = request.form['course_id']
+        
+        result = delete_course(course_id)
+        
+        # Check if the deletion was successful
+        if "successfully" in result.lower():
+            return f"{result}<br><a href='/'>Return to Home</a>"
+        else:
+            return f"{result}<br><a href='/'>Back to Home</a>"
+    else:
+        return "Invalid request method"
+
+@app.route('/delete_grade', methods=['POST'])
+def delete_grade_route():
+    if request.method == 'POST':
+        grade_id = request.form['grade_id']
+        
+        result = delete_grade(grade_id)
+        
+        # Check if the deletion was successful
+        if "successfully" in result.lower():
+            return f"{result}<br><a href='/'>Return to Home</a>"
+        else:
+            return f"{result}<br><a href='/'>Back to Home</a>"
+    else:
+        return "Invalid request method"
+
+@app.route('/delete_enrollment', methods=['POST'])
+def delete_enrollment_route():
+    if request.method == 'POST':
+        enrollment_id = request.form['enrollment_id']
+        
+        result = delete_enrollment(enrollment_id)
+        
+        # Check if the deletion was successful
         if "successfully" in result.lower():
             return f"{result}<br><a href='/'>Return to Home</a>"
         else:
