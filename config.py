@@ -100,8 +100,6 @@ def highest_gpa(StudentID):
         result:
             print(f"Highest GPA for Student ID {student_id}: {result[0]}")
             return result[0]
-
-         return result[0]
     except mysql.connector.Error as err:
         print(f"Error: {err}")
         return "Error finding GPA."
