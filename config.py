@@ -84,19 +84,19 @@ def insert_enrollment(enrollment_id, student_id, course_id, enrollment_date):
     finally:
         mycursor.close()
 
-def returnByStudentID(StudentID):
+def returnByStudentID(student_id):
     cursor = mydb.cursor()
-    cursor.execute("SELECT * FROM Student WHERE StudentID = %s;", (StudentID,))
+    cursor.execute("SELECT * FROM Student WHERE StudentID = %s;", (student_id,))
     result = cursor.fetchone()
     cursor.close()
     return result
 
 # Function to find students with the highest GPA
-def returnGPAbyStudentID(StudentID):
+def returnGPAbyStudentID(student_id):
     try:
         try:
         # Assuming you have a table named Enrollment with appropriate columns
-        mycursor.execute("SELECT * FROM Grades WHERE StudentID = %s;", (StudentID))",
+        mycursor.execute("SELECT * FROM Grades WHERE StudentID = %s;", (student_id))",
         mydb.commit()
         grades = cursor.fetchone()
         return 0
@@ -119,7 +119,74 @@ def courses_taught_by_professor(professor_id):
     finally:
         mycursor.close()
 
-        
+def delete_student(student_id):
+    """
+    Deletes a student record from the database.
+
+    Args:
+    - student_id (int): ID of the student to be deleted.
+
+    Returns:
+    - str: A message indicating the success or failure of the operation.
+    """
+    try:
+        cursor = mydb.cursor()
+        cursor.execute("DELETE FROM Student WHERE StudentID = %s", (student_id,))
+        mydb.commit()
+        return f"Success: Student with ID {student_id} deleted."
+    except mysql.connector.Error as err:
+        print(f"Error: {err}")
+        return f"Error deleting student."
+
+def delete_professor(professor_id):
+    try:
+        cursor = mydb.cursor()
+        cursor.execute("DELETE FROM Professor WHERE ProfessorID = %s", (professor_id,))
+        mydb.commit()
+        return f"Success: Professor with ID {professor_id} deleted."
+    except mysql.connector.Error as err:
+        print(f"Error: {err}")
+        return f"Error deleting professor."
+
+def delete_classroom(classroom_id):
+    try:
+        cursor = mydb.cursor()
+        cursor.execute("DELETE FROM Classroom WHERE ClassroomID = %s", (classroom_id,))
+        mydb.commit()
+        return f"Success: Classroom with ID {classroom_id} deleted."
+    except mysql.connector.Error as err:
+        print(f"Error: {err}")
+        return f"Error deleting classroom."
+
+def delete_course(course_id):
+    try:
+        cursor = mydb.cursor()
+        cursor.execute("DELETE FROM Course WHERE CourseID = %s", (course_id,))
+        mydb.commit()
+        return f"Success: Course with ID {course_id} deleted."
+    except mysql.connector.Error as err:
+        print(f"Error: {err}")
+        return f"Error deleting course."
+
+def delete_grade(grade_id):
+    try:
+        cursor = mydb.cursor()
+        cursor.execute("DELETE FROM Grades WHERE GradeID = %s", (grade_id,))
+        mydb.commit()
+        return f"Success: Grade with ID {grade_id} deleted."
+    except mysql.connector.Error as err:
+        print(f"Error: {err}")
+        return f"Error deleting grade."
+
+def delete_enrollment(enrollment_id):
+    try:
+        cursor = mydb.cursor()
+        cursor.execute("DELETE FROM Enrollment WHERE EnrollmentID = %s", (enrollment_id,))
+        mydb.commit()
+        return f"Success: Enrollment with ID {enrollment_id} deleted."
+    except mysql.connector.Error as err:
+        print(f"Error: {err}")
+        return f"Error deleting enrollment."
 
         
 
