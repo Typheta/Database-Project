@@ -1,0 +1,64 @@
+<!-- delete_records.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Records</title>
+</head>
+<body>
+    <h1>Delete Records</h1>
+
+    <a href="/" style="text-decoration: none;"><button type="button">Return to Home</button></a>
+
+    <br>
+
+    <!-- Form to delete a student -->
+    <form action="/delete_student" method="post">
+        <label for="student_id">Student ID:</label>
+        <input type="text" name="student_id" required>
+        <button type="submit">Delete Student</button>
+    </form>
+
+    <!-- Form to delete a professor -->
+    <form action="/delete_professor" method="post">
+        <label for="professor_id">Professor ID:</label>
+        <input type="text" name="professor_id" required>
+        <button type="submit">Delete Professor</button>
+    </form>
+
+    <!-- Form to delete a classroom -->
+    <form action="/delete_classroom" method="post">
+        <label for="classroom_id">Classroom ID:</label>
+        <input type="text" name="classroom_id" required>
+        <button type="submit">Delete Classroom</button>
+    </form>
+
+    <!-- Form to delete a course -->
+    <form action="/delete_course" method="post">
+        <label for="course_id">Course ID:</label>
+        <input type="text" name="course_id" required>
+        <button type="submit">Delete Course</button>
+    </form>
+
+    <!-- Form to delete a grade -->
+    <form action="/delete_grade" method="post">
+        <label for="grade_id">Grade ID:</label>
+        <input type="text" name="grade_id" required>
+        <button type="submit">Delete Grade</button>
+    </form>
+
+    <!-- Form to delete an enrollment -->
+    <form action="/delete_enrollment" method="post">
+        <label for="enrollment_id">Enrollment ID:</label>
+        <input type="text" name="enrollment_id" required>
+        <button type="submit">Delete Enrollment</button>
+    </form>
+
+    <br>
+
+    <a href="/" style="text-decoration: none;"><button type="button">Return to Home</button></a>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!-- display_results.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+
+    <a href="/" style="text-decoration: none;"><button type="button">Return to Home</button></a>
+
+    <hr>
+
+    {% if result %}
+        <h2>Search Results</h2>
+        
+        {% if table == 'students' %}
+    <!-- Display student-specific information -->
+    <p>Student ID: {{ result[0] }}</p>
+    <p>First Name: {{ result[1] }}</p>
+    <p>Last Name: {{ result[2] }}</p>
+    <!-- Add other student attributes as needed -->
+{% elif table == 'professors' %}
+    <!-- Display professor-specific information -->
+    <p>Professor ID: {{ result[0] }}</p>
+    <p>First Name: {{ result[1] }}</p>
+    <p>Last Name: {{ result[2] }}</p>
+    <!-- Add other professor attributes as needed -->
+{% elif table == 'classrooms' %}
+    <!-- Display classroom-specific information -->
+    <p>Classroom ID: {{ result[0] }}</p>
+    <p>Building: {{ result[1] }}</p>
+    <p>Room Number: {{ result[2] }}</p>
+    <!-- Add other classroom attributes as needed -->
+{% elif table == 'courses' %}
+    <!-- Display course-specific information -->
+    <p>Course ID: {{ result[0] }}</p>
+    <p>Course Name: {{ result[1] }}</p>
+    <p>Classroom ID: {{ result[2] }}</p>
+    <!-- Add other course attributes as needed -->
+{% elif table == 'grades' %}
+    <!-- Display grade-specific information -->
+    <p>Grade ID: {{ result[0] }}</p>
+    <p>Student ID: {{ result[1] }}</p>
+    <p>Course ID: {{ result[2] }}</p>
+    <!-- Add other grade attributes as needed -->
+{% elif table == 'enrollments' %}
+    <!-- Display enrollment-specific information -->
+    <p>Enrollment ID: {{ result[0] }}</p>
+    <p>Student ID: {{ result[1] }}</p>
+    <p>Course ID: {{ result[2] }}</p>
+    <!-- Add other enrollment attributes as needed -->
+
+        {% endif %}
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+
+</body>
+</html>

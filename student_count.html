@@ -1,0 +1,36 @@
+<!-- student_count.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Count</title>
+</head>
+<body>
+    <h1>Student Count by Course</h1>
+    
+    {% if results %}
+        {% for course in results %}
+            <h2>{{ course['course_name'] }}</h2>
+            {% if course['students'] %}
+                <ul>
+                    {% for student in course['students'] %}
+                        <li>{{ student['student_name'] }} (ID: {{ student['student_id'] }})</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No students enrolled in this course.</p>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+
+    <br>
+    <br>
+
+    <!-- Link to go back to the home page -->
+    <a href="/">Back to Home</a>
+</body>
+</html>

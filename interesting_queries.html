@@ -1,0 +1,44 @@
+<!-- delete_records.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interesting Queries</title>
+</head>
+<body>
+    <h1>Intersting Queries</h1>
+
+    <br>
+
+    <a href="/" style="text-decoration: none;"><button type="button">Return to Home</button></a>
+
+    <br>
+
+    <h2>Average Course Grade</h2>
+    <form id="aggregate-form" action="/execute_aggregate_query" method="get">
+        <label for="course_id">Enter Course ID:</label>
+        <input type="text" id="course_id" name="course_id" required>
+        <input type="submit" value="Submit">
+    </form>
+
+    <br>
+
+    <form action="/execute_join_query" method="post">
+        <button type="submit">Get Student Enrollment</button>
+    </form>
+
+    <br>
+
+    <!-- Button to get course enrollments -->
+    <form action="/get_course_enrollments" method="post">
+        <button type="submit">Get Course Enrollments</button>
+    </form>
+
+    <br>
+
+    <a href="/" style="text-decoration: none;"><button type="button">Return to Home</button></a>
+
+</body>
+</html>
